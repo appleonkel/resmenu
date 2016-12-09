@@ -1,0 +1,61 @@
+/* General Layout Definitions */
+.resmenu {
+	font-size: 1.5rem;
+	list-style-type: none;
+}
+.resmenu .subnav {
+	list-style-type: none;
+	transition: opacity .3s ease-in;
+}
+.resmenu a {text-decoration: none; padding: 0.5rem;}
+
+/* Remove margins and padding from the list */
+.resmenu {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	text-align: center;
+	position: relative;
+}
+.resmenu > li {display: none; text-align: left}
+.resmenu.open > li:not(:first-child) {display: block;}
+.resmenu > li a {
+	display: block;
+}
+
+/* Special first-item class show also on small mobile devices */
+.resmenu .main {display: inline-block}
+.resmenu > li.icon {
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+/* The breakpoints depends on your main list-items */
+@media screen and (min-width: 650px) {
+	.resmenu {position: static;}
+	.resmenu > li {display: inline-block;}
+	.resmenu > li.icon {display: none;}
+	/* Workaround to hide mobile open. Need same CSS-selector */
+	.resmenu.open > li:not(:first-child) {display: inline-block}
+	.resmenu.open > li:last-child {display: none;}
+	/* Sub Menus */
+	.resmenu .subnav {
+		position: absolute;
+		height: 0; // display: none doesn't work with transitions 
+		opacity: 0;
+		overflow: hidden;
+		width: inherit;
+		padding-left: 0;
+	}
+	.resmenu > li:hover > ul {
+		opacity: 1;
+		height: auto;
+	}
+	.resmenu > li {
+		display: inline-block;
+	}
+}
+
+

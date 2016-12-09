@@ -1,0 +1,17 @@
+.main-container {width: 100%; background: #FFF;}
+a {color: #00EEFF;}
+a:hover {color: #AAFF00;}
+
+/* Menu Colors */
+.resmenu {
+	background-color: #003d3d;
+}
+.resmenu .subnav {
+	background-color: #002222; 
+}
+@media screen and (min-width: 650px) {
+	.resmenu .subnav {
+		border-radius: 0 0 5px 5px;
+		box-shadow: 1px 2px 3px 0 rgba(0, 238, 255, 0.6);
+	}
+}
